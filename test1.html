@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://use.edgefonts.net/abel:n4:all.js"></script>
+<script src="http://use.edgefonts.net/adamina:n4:all.js"></script>
+<script src="http://use.edgefonts.net/sorts-mill-goudy:n5,i5:all.js"></script>
+        
+<script type="text/javascript">$(window).load(function(){
+    $("p").on('keydown', function(e) {  
+        if(e.keyCode == 13)
+        {
+            e.preventDefault();
+        }
+    });
+});</script>
+<script type="text/javascript">
+        </script>
+        
+        <title>trojan - Test #1</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div id="content">
+
+            <!-- 0 -->
+            <p class="code 0" contenteditable="true" spellcheck="false">
+                Plug Glob, Natural Language Toolkit, String Punctuation</p>
+            <div class="console 0"><p class="indication">Done.</p></div>
+
+            <!-- 1 -->
+            <p class="code 1" contenteditable="true" spellcheck="false">
+                <span class="module nltk">Natural Language Toolkit:</span> Language is English</p>
+            <div class="console 1"><p class="indication">Done.</p></div>
+
+            <!-- 2 -->
+            <p class="code 2" contenteditable="true" spellcheck="false">
+                *malewords is ['guy','spokesman','chairman',"men's",'men','him',"he's",
+                'his','boy', 'boyfriend', (and 36 more...)]</p>
+            <div class="console 2"><p class="indication">Done. 
+                <span class="description">array, 46 lines: ['guy', 'spokesman', ...] 
+                    <span class="realtimelink">Edit</span> </span></p></div>
+
+            <!-- 3 -->
+            <p class="code 3" contenteditable="true" spellcheck="false">
+                *femalewords is ['heroine','spokeswoman','chairwoman',"women's",
+                'actress', 'women',"she's",'her','aunt','aunts', (and 36 more...)]</p>
+            <div class="console 3"><p class="indication">Done. 
+                <span class="description">array, 46 lines: ['heroine', 'spokeswoman', ...] 
+                    <span class="realtimelink">Edit</span></span> </p></div>
+
+            
+            
+            <!-- FUNCTIONS -->
+            <div class="bigfunc">
+            
+            <!-- 4 -->
+                <!-- <span class="func">Function</span> -->
+            <p class="code 4" contenteditable="true" spellcheck="false">
+                <span class="func">Give the gender of [*sentence]" means:</span></p>
+            <div class="console 4"><p class="indication">Done.
+                <span class="description">Input: Array. Output: String.</span> </p></div>
+
+            <!-- 5 -->
+            <p class="code 5" contenteditable="true" spellcheck="false">
+                *mw_length is Length of [Intersection between *sentence and *malewords)] </p>
+            <div class="console 5"><p class="indication">Done.
+                <span class="description">3 elements, then 4, then 7, then 1...
+                    <span class="realtimelink">See more</span></span> </p></div>
+
+
+            <!-- 6 -->
+            <p class="code 6" contenteditable="true" spellcheck="false">
+                *fw_length is Length of [Intersection between *sentence and *femalewords)] </p>
+            <div class="console 6"><p class="indication">Done.
+                <span class="description">0 elements, then 1, then 2, then 0...
+                    <span class="realtimelink">See more</span></span> </p></div>
+
+            <!-- 7 -->
+            <p class="code 7" contenteditable="true" spellcheck="false">
+                If *mw_length>0 and *fw_length==0:</p>
+            <div class="console 7"><p class="indication">Done.
+                <span class="description">Branch taken 30 times.
+                    <span class="realtimelink">See more</span></span> </p></div>
+            
+            <div class="branch">
+                <!-- 8 -->
+                <p class="code 8" contenteditable="true" spellcheck="false">
+                    *gender is 'male'</p>
+                <div class="console 8"><p class="indication">Done 
+                    <span class="description">30 times.
+                        <span class="realtimelink">See more</span></span> </p></div>
+            </div>
+
+            <!-- 9 -->
+            <p class="code 9" contenteditable="true" spellcheck="false">
+                Else, if *mw_length==0 and *fw_length>0:</p>
+            <div class="console 9"><p class="indication">Done.
+                <span class="description">Branch taken 15 times.
+                    <span class="realtimelink">See more</span></span> </p></div>
+            
+            <div class="branch">
+                <!-- 10 -->
+                <p class="code 10" contenteditable="true" spellcheck="false">
+                    *gender is 'female'</p>
+                <div class="console 10"><p class="indication">Done 
+                    <span class="description">15 times.
+                        <span class="realtimelink">See more</span></span> </p></div>
+            </div>
+
+            <!-- 11 -->
+            <p class="code 11" contenteditable="true" spellcheck="false">
+                Else, if *mw_length>0 and *fw_length>0:</p>
+            <div class="console 11"><p class="indication">Done.
+                <span class="description">Branch taken 5 times.
+                    <span class="realtimelink">See more</span></span> </p></div>
+            
+            <div class="branch">
+                <!-- 12 -->
+                <p class="code 12" contenteditable="true" spellcheck="false">
+                    *gender is 'both'</p>
+                <div class="console 12"><p class="indication">Done 
+                    <span class="description">15 times.
+                        <span class="realtimelink">See more</span></span> </p></div>
+            </div>
+
+
+            <!-- 13 -->
+            <p class="code 13" contenteditable="true" spellcheck="false">
+                Else:</p>
+            <div class="console 13"><p class="indication">Done.
+                <span class="description">Branch taken 5 times.
+                    <span class="realtimelink">See more</span></span> </p></div>
+            
+            <div class="branch">
+                <!-- 14 -->
+                <p class="code 14" contenteditable="true" spellcheck="false">
+                    *gender is 'none'</p>
+                <div class="console 14"><p class="indication">Done 
+                    <span class="description">15 times.
+                        <span class="realtimelink">See more</span></span> </p></div>
+            </div>
+                
+            </div>
+           
+            
+            
+            <!-- 3 -->
+            <p class="code 3" contenteditable="true" spellcheck="false">
+                *femalewords is ['heroine','spokeswoman','chairwoman',"women's",'actress', 'women',"she's",'her','aunt','aunts', (and 36 more...)]</p>
+            <div class="console 3"><p class="indication">Done. <span class="realtimelink">array, 46 lines: ['heroine', 'spokeswoman', ...] <span style="text-decoration: underline">Edit</span> </p></div>
+
+            
+            
+            <!-- 100 -->
+            <p class="code 100 emphasized" contenteditable="true" spellcheck="false">
+                Regression on *data with *median_income and *crime_rate, *education_level</p>
+            <div class="console 100 emphasized">
+                <table class="regression" frame="void" rules="none">
+                    <tr>
+                        <td class="rg_var"><p class="rg_var">crime_rate</p></td>
+                        <td><p class="rg_value">0.002</p></td>
+                        <td>
+                            <p class="pval">p-value: 0.005<br/>GOOD</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="rg_var"><p class="rg_var">education_level</p></td>
+                        <td><p class="rg_value">0.745</p></td>
+                        <td>
+                            <p class="pval">p-value: 0.367<br/>BAD</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 101 -->
+            <p class="code 101" contenteditable="true" spellcheck="false">
+                3 is equal to 3</p>
+            <div class="console 101"><p class="result">True.</p></div>
+
+            <!-- 103 -->
+            <p class="code 102" contenteditable="true" spellcheck="false">
+                Import 'blabla.csv' as database</p>
+            <div class="console 102"><p class="indication">(Done)</p></div>
+            
+        </div>  
+    </body>
+</html>

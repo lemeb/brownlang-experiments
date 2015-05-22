@@ -1,0 +1,749 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://use.edgefonts.net/abel:n4:all.js"></script>
+<script src="http://use.edgefonts.net/adamina:n4:all.js"></script>
+<script src="http://use.edgefonts.net/sorts-mill-goudy:n5,i5:all.js"></script>
+<script src="http://use.edgefonts.net/old-standard:n4,i4,n7:all;prata:n4:all.js"></script>
+<script src="http://use.edgefonts.net/andada:n4:all;average:n4:all;cardo:n4,i4,n7:all.js"></script>
+                
+        <title>trojan - Test #2</title>
+        <link rel="stylesheet" href="main2.css">
+    </head>
+    <body>
+        <div id="content" >
+            <div id="leftcol" contenteditable="plaintext-only">
+                
+                
+<p class="instruction" id="i1">Plug Glob, String Punctuation</p>
+<p class="instruction" id="i2">Plug Natural Language Toolkit as nltk</p>
+<p class="instruction" id="i3">Natural Language Toolkit: Language is English </p>
+<p class="instruction" id="i4">#male_words equals {'guy','spokesman','chairman',"men's",'men','him',"he's", 'his','boy', 'boyfriend', (and 36 more...)} </p>
+<p class="instruction" id="i5">#female_words equals {'heroine','spokeswoman','chairwoman',"women's", 'actress', 'women',"she's",'her','aunt','aunts', (and 36 more...)} </p>
+<p class="instruction function" id="i6">* Give the gender of [#sentence]</p>
+<p class="instruction" id="i7">#mw_length equals Length of [Intersection between #sentence and #male_words)]</p>
+<p class="instruction" id="i8">#fw_length equals Length of [Intersection between #sentence and #female_words)]</p>
+<p class="instruction" id="i9">#gender equals 'none' (Overwritten if not the case) </p>
+<p class="instruction" id="i10">If #mw_length is superior 0 and #fw_length is equal to 0: </p>                
+<p class="instruction" id="i11">
+    <span class="indent">#gender equals 'male'</span></p>                
+<p class="instruction" id="i12">Else, if #mw_length is equal to 0 and #fw_length is superior to 0: </p>                
+<p class="instruction" id="i13">
+    <span class="indent">#gender equals 'female'</span></p>   
+<p class="instruction" id="i14">Else, if #mw_length is superior to 0 and #fw_length is superior to 0: </p>                
+<p class="instruction" id="i15">
+    <span class="indent">#gender equals 'both'</span></p>
+<p class="instruction" id="i16">Return #gender</p>  
+                
+<p class="instruction function" id="i17">* Is [#word] proper?</p>
+<p class="instruction" id="i18">If #proper_nouns{#word} does not exist:</p>
+<p class="instruction" id="i19">
+    <span class="indent">#proper_nouns{#word} equals 0</span></p>
+<p class="instruction" id="i20">
+    If #word{0} is equal to [Capitalize #word{0}]: 
+    (If #word is capitalized)</p>
+<p class="instruction" id="i21">
+    <span class="indent">Increment #proper_nouns{#word} (by 1)</span></p>
+<p class="instruction" id="i22">Else:</p>                
+<p class="instruction" id="i23">
+    <span class="indent">Decrement #proper_nouns{#word} (by 1)</span></p>
+                
+<p class="instruction function" id="i24">
+    * Increment counters with [#sentence_words], [#gender]</p>                
+<p class="instruction" id="i25">
+    Increment #sentence_counter{#gender} (by 1) </p>                
+<p class="instruction" id="i26">
+    Increment #word_counter{#gender} by [Length of #sentence_words] </p>
+<p class="instruction" id="i27">For (each) #word in #sentence_words: </p>
+<p class="instruction" id="i28">
+    <span class="indent">
+        Increment #word_freq{#gender}{#word} (by 1)</span></p>
+<p class="instruction funcend" id="i29">
+     * </p>                
+                
+<p class="instruction returntocode" id="i30">
+    #sexes equals {'male', 'female', 'none', 'both'}</p>                
+<p class="instruction" id="i31">For (each) #sex in #sexes: </p>
+<p class="instruction" id="i32">
+    <span class="indent">#sentence_counter{#sex} equals 0</span></p>
+<p class="instruction" id="i33">
+    <span class="indent">#word_counter{#sex} equals 0</span></p>
+<p class="instruction" id="i34">
+    <span class="indent">#word_freq{#sex} equals 0</span></p>
+                
+<br>                
+<p class="instruction" id="i35">
+    (Grab the names of all the files)</p>
+<p class="instruction" id="i36">
+    #file_list equals Glob articles/*txt</p>
+                <br>
+<p class="instruction" id="i37">
+    For (each) #file_name in #file_list: </p>
+                
+<p class="instruction" id="i38">
+    <span class="indent">(Open the file)</span></p>                
+<p class="instruction" id="i39">
+    <span class="indent">(Split into sentences)</span></p>                
+<p class="instruction" id="i40">
+    <span class="indent">
+        #sentences is nltk: Divide #text</span></p>
+<p class="instruction" id="i41">
+    <span class="indent">
+        For (each) #sentence in #sentences:</span></p>                
+<p class="instruction" id="i42">
+    <span class="indent">
+        <span class="indent">
+            (word tokenize and strip punctuation)</span>
+    </span></p>                
+<p class="instruction" id="i43">
+    <span class="indent">
+        <span class="indent">
+            Split #sentence into #sentence_words 
+            (same as #sentence_words = #sentence)</span>
+    </span></p>                
+<p class="instruction" id="i44">
+    <span class="indent">
+        <span class="indent">
+            For #w in #sentence_words:</span>
+    </span></p>                
+<p class="instruction" id="i45">
+    <span class="indent">
+        <span class="indent">
+            <span class="indent">
+                If Length of [#w without punctuation] is not 0:
+            </span>
+        </span>
+    </span></p>                
+<p class="instruction" id="i46">
+    <span class="indent">
+        <span class="indent">
+            <span class="indent">
+                <span class="indent">
+                Add #w to #sentence_words2</span>
+            </span>
+        </span>
+    </span></p>                
+<p class="instruction" id="i47">
+    <span class="indent">
+        <span class="indent">
+            (figure out how often each word is capitalized)</span>
+        </span></p>                
+<p class="instruction" id="i48">
+    <span class="indent">
+        <span class="indent">
+            For #word in #sentence_words{1-}:</span>
+        </span></p>                
+<p class="instruction" id="i49">
+    <span class="indent">
+            <span class="indent">
+                <span class="indent">Is #word proper?</span>
+            </span>
+        </span></p>                  
+<p class="instruction" id="i50">
+    <span class="indent">
+        <span class="indent">
+            (lower case it)</span>
+        </span></p>
+<p class="instruction" id="i51">
+    <span class="indent">
+        <span class="indent">
+            Apply [Lower #w] to #sentence_words2{#w}</span>
+        </span></p>                
+<p class="instruction" id="i52">
+    <span class="indent">
+        <span class="indent">
+            (figure out if there are gendered words in the sentence by computing the length of the intersection of the sets)</span>
+        </span></p>                
+<p class="instruction" id="i53">
+    <span class="indent">
+        <span class="indent">
+            #gender is Give the gender of #sentence_words2</span>
+        </span></p>                
+<p class="instruction" id="i54">
+    <span class="indent">
+        <span class="indent">
+            Increment counters with #sentence_words2, #gender</span>
+        </span></p>                
+
+                
+<br>                
+<p class="instruction" id="i55">(Create a set of all words which were capitalized more often than not)</p>                
+<p class="instruction" id="i56">For (each) #word in #proper_nouns:</p>
+<p class="instruction" id="i57">
+    <span class="indent">
+        If proper_nouns{#word} is inferior to 0:</span></p>                
+<p class="instruction" id="i58">
+    <span class="indent">
+        <span class="indent">
+            Delete proper_nouns{#word}
+        </span>
+    </span></p>
+                
+<br>
+<p class="instruction" id="i59">
+    (List the 1000 top words in the different genders)</p>                  
+<p class="instruction" id="i60">
+    #common_words = [Largest 1000 from #word_freq{'female'}, 
+    key [Value of #word_freq{'female'}]] + 
+    [Largest 1000 from #word_freq{'male'}, 
+    key [Value of #word_freq{'male'}]]</p>
+<p class="instruction" id="i61">
+    From #common_words remove #male_words, #female_words, #proper_nouns
+</p>
+
+<br>
+<p class="instruction" id="i62">(How is the word likely to appear 
+    in a male subject sentence versus a female subject sentence?)</p>
+<p class="instruction" id="i63">
+    For #word in #common_words:</p>
+<p class="instruction" id="i64">
+    <span class="indent">
+        #male_ratio equals 
+        #word_freq{'male'}{#word}/#word_counter{'male'}</span></p>
+<p class="instruction" id="i65">
+    <span class="indent">#female_ratio equals 
+        #word_freq{'female'}{#word}/#word_counter{'female'}</span></p>
+<p class="instruction" id="i66">
+    <span class="indent">
+        #temp_ratio equals #male_ratio / 
+        [#male_ratio + #female_ratio]</span></p>
+<p class="instruction" id="i67">
+    <span class="indent">
+        #male_percent{#word} equals #temp_ratio</span></p>   
+                
+<br>
+<p class="instruction" id="i68">(Print basic statistics)</p>                
+<p class="instruction" id="i69">Summarize #sentence_counter</p>                  
+                
+                <div class="result summary" contenteditable="false">
+                <table class="summary" style="border-spacing:20px 0px;">
+                    <tr style="font-size:30%; text-align:center;">
+                    <td><p>Total: 100,000</p></td>
+                    </tr>
+
+                    <tr style="font-size:30%; text-align:center;">
+                    <td><p>male</p></td>
+                    <td><p>female</p></td>
+                    <td><p>both</p></td>
+                    <td><p>none</p></td>
+                    </tr>
+                    
+                    <tr style="font-size:100%; ">
+                    <td><p>19,681</p></td>
+                    <td><p>6,242</p></td>
+                    <td><p>10,139</p></td>
+                    <td><p>63,938</p></td>
+                </tr>
+                    <tr style="font-size:30%; text-align:center;">
+                    <td><p>19.7%</p></td>
+                    <td><p>6.2%</p></td>
+                    <td><p>10.1%</p></td>
+                    <td><p>63.9%</p></td>
+                    </tr>
+</table>
+                </div>
+                   
+                   
+<p class="instruction" id="i70">
+    #ratio_gendered equals 100*[#Sentence_counter{'male'} + #sentence_counter{'female'}] / [#sentence_counter{'male'} + #sentence_counter{'female'} + #sentence_counter{'both'} + #sentence_counter{'none'}]</p>
+<p class="instruction" id="i71">
+    "[#ratio_gendered]% gendered sentences"</p>
+                
+                <div class="result sentence" contenteditable="false">
+                    <p>25.9% gendered sentences</p>
+                </div>
+
+<p class="instruction" id="i72">
+    "[#sentence_counter{'male'}]% sentences about men"</p>
+                
+                <div class="result sentence" contenteditable="false">
+                    <p>19,681 sentences about men</p>
+                </div>
+
+                
+<p class="instruction" id="i73">
+    "[#sentence_counter{'female'}]% sentences about women"</p> 
+
+            <div class="result sentence" contenteditable="false">
+                    <p>6,242 sentences about women</p>
+                </div>
+
+<p class="instruction" id="i74">(Print the table)</p>                
+<p class="instruction" id="i75">
+    #male_table is A new table with title 
+    "Male Words" and columns "ratio", "male", "female", "word"</p>
+<p class="instruction" id="i76">
+    For #word in [Largest 50 from #male_percent, 
+    key [Value of #male_percent]]:</p>                
+<p class="instruction" id="i77">
+    <span class="indent">
+        If #male_percent{#word} does not exist:</span></p>
+<p class="instruction" id="i78">
+    <span class="indent">
+        <span class="indent">
+            #ratio is 100</span>
+    </span></p>                
+<p class="instruction" id="i79">
+    <span class="indent">
+        Else:</span></p>                  
+<p class="instruction" id="i80">
+    <span class="indent">
+        <span class="indent">
+        ratio = #male_percent{#word}/[1 - #male_percent{#word}]</span>
+    </span></p>
+<p class="instruction" id="i81">
+    <span class="indent">
+        Add row {#ratio, #word_freq{'male'}{#word},
+        #word_freq{'female'}{#word}, #word} to #male_table</span>
+    </span></p>                
+<p class="instruction" id="i82">
+    #male_table</p>    
+
+                <div class="result tablesummary" contenteditable="false">
+                    <p style="text-align:left; 
+                              font-size:3em;text-decoration:underline;">
+                        Male Words</p>
+                <table class="tablesummary" style="border-spacing:20px 0px;position:relative; left:-20px;text-align:left;">
+                    <tr style="font-size:80%;"> 
+                    <td><p>Ratio</p></td>
+                    <td><p>Male</p></td>
+                    <td><p>Female</p></td>
+                    <td><p>Word</p></td>
+                    </tr>
+                    
+                    <tr style="font-size:60%;">
+                    <td><p>11.2</p></td>
+                    <td><p>72</p></td>
+                    <td><p>02</p></td>
+                    <td><p>prime</p></td>
+                </tr>
+                    <tr style="font-size:60%;">
+                    <td><p>10.8</p></td>
+                    <td><p>70</p></td>
+                    <td><p>02</p></td>
+                    <td><p>baseball</p></td>
+                </tr>
+                    <tr style="font-size:60%;">
+                    <td><p>9.5</p></td>
+                    <td><p>92</p></td>
+                    <td><p>03</p></td>
+                    <td><p>official</p></td>
+                </tr>
+                    <tr style="font-size:60%;">
+                    <td><p>9.5</p></td>
+                    <td><p>61</p></td>
+                    <td><p>02</p></td>
+                    <td><p>capital</p></td>
+                </tr>
+                    <tr style="font-size:60%;">
+                    <td><p>9.5</p></td>
+                    <td><p>61</p></td>
+                    <td><p>02</p></td>
+                    <td><p>governor</p></td>
+                </tr>
+                    <tr style="font-size:60%;">
+                    <td><p>5.8</p></td>
+                    <td><p>75</p></td>
+                    <td><p>04</p></td>
+                    <td><p>fans</p></td>
+                </tr>
+</table>
+                    <p style="text-align:left; font-size:1em; color:dimgray;">54 more rows <img src="crossmini.png" style=" position:relative; top:5px;"/></p>
+                </div>
+        
+        
+        
+<p class="instruction" id="i83">
+    #female_table is A new table 
+    with title "Female Words" 
+    and columns "ratio", "male", "female", "word"</p>
+<p class="instruction" id="i84">
+    For #word in [Smallest 50 from #male_percent, 
+    key [Value of #male_percent]]:</p>                
+<p class="instruction" id="i85">
+    <span class="indent">
+        If #male_percent{#word} does not exist:
+    </span></p>                
+<p class="instruction" id="i86">
+    <span class="indent">
+        <span class="indent">
+            #ratio is 100
+        </span>
+    </span></p>                
+<p class="instruction" id="i87">
+    <span class="indent">
+        Else:
+    </span></p>                
+<p class="instruction" id="i88">
+    <span class="indent">
+        <span class="indent">
+            #ratio = [1 - #male_percent{#word}]/#male_percent{#word}
+        </span>
+    </span></p>                
+<p class="instruction" id="i89">
+    <span class="indent">
+        Add row {#ratio, #word_freq{'male'}{#word},
+        #word_freq{'female'}{#word}, #word} to #male_table
+    </span></p>                  
+<p class="instruction" id="i90">#female_table</p>                  
+              
+        
+            <div class="result tablesummary" contenteditable="false">
+                    <p style="text-align:left; 
+                              font-size:3em;text-decoration:underline;">
+                        Female Words</p>
+                <table class="tablesummary" style="border-spacing:20px 0px;position:relative; left:-20px;text-align:left;">
+                    <tr style="font-size:80%;"> 
+                    <td><p>Ratio</p></td>
+                    <td><p>Male</p></td>
+                    <td><p>Female</p></td>
+                    <td><p>Word</p></td>
+                    </tr>
+                    
+                    <tr style="font-size:60%;">
+                    <td><p>100.0</p></td>
+                    <td><p>0</p></td>
+                    <td><p>29</p></td>
+                    <td><p>pregnant</p></td>
+                </tr>
+                    <tr style="font-size:60%;">
+                    <td><p>100.0</p></td>
+                    <td><p>0</p></td>
+                    <td><p>17</p></td>
+                    <td><p>husband's</p></td>
+                </tr>
+                    <tr style="font-size:60%;">
+                    <td><p>51.6</p></td>
+                    <td><p>1</p></td>
+                    <td><p>16</p></td>
+                    <td><p>suffrage</p></td>
+                </tr>
+                    <tr style="font-size:60%;">
+                    <td><p>40.3</p></td>
+                    <td><p>2</p></td>
+                    <td><p>25</p></td>
+                    <td><p>breast</p></td>
+                </tr>
+                    <tr style="font-size:60%;">
+                    <td><p>12.9</p></td>
+                    <td><p>4</p></td>
+                    <td><p>16</p></td>
+                    <td><p>gender</p></td>
+                </tr>
+                    <tr style="font-size:60%;">
+                    <td><p>11.8</p></td>
+                    <td><p>6</p></td>
+                    <td><p>22</p></td>
+                    <td><p>pregnancy</p></td>
+                </tr>
+</table>
+                    <p style="text-align:left; font-size:1em; color:dimgray;">54 more rows <img src="crossmini.png" style=" position:relative; top:5px;"/></p>
+                </div>
+                
+            </div>
+            <div id="rightcol">
+                <p class="output" id="o1">Plugged. 
+                    <img src="glob.png"/>
+                    <img src="punc.png"/>  
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o2">Plugged. 
+                    <img src="ntlk.png"/>
+                    <img src="crossmini.png" 
+                         style="position:relative;top:4px;"/></p>
+                <p class="output" id="o3">Done.</p>
+                <p class="output" id="o4"><br>Done. 
+                    <span class="varinfo">array, 46 lines: ['guy',
+                        'spokesman', ...]</span> 
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o5"><br>Done. 
+                    <span class="varinfo">array, 46 lines: ['heroine', ...]
+                    </span> 
+                    <img src="crossmini.png"/></p>
+                
+                
+                <p class="output function" id="o6">Function. 
+                    <span class="varinfo">Input: string. 
+                        Output: string</span> 
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o7"><br>Done. 
+                    <span class="varinfo">integer: 3, then 0, 1, 0...</span> 
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o8"><br>Done. 
+                    <span class="varinfo">integer: 0, then 0, 0, 2...</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o9"><span class="broken">
+                    Broken. Type mismatch.</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o10">Branch.
+                    <span class="varinfo">Taken 25 times.</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o11">- Done. 
+                    <span class="varinfo">string: 'male'</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o12">Branch.
+                    <span class="varinfo">Taken 15 times.</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o13">- Done. 
+                    <span class="varinfo">string: 'female'</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o14">Branch.
+                    <span class="varinfo">Taken 43 times.</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o15">- Done. 
+                    <span class="varinfo">string: 'both'</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o16">
+                    <span class="warning">Done, but...</span> (99 times)
+                </p>
+                
+                
+                <p class="output function" id="o17">Function. 
+                    <span class="varinfo">Input: string. 
+                        No output.</span> 
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o18">Branch.
+                    <span class="varinfo">Taken 13 times.</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o19">- Done.
+                    <span class="varinfo">integer: 0</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o20">Branch.
+                    <span class="varinfo">Taken 78 times.</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o21">- Done.
+                    <span class="varinfo">integer: 1, then 1, 1...</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o22">Branch.
+                    <span class="varinfo">Taken 20 times.</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o23">- Done. 
+                    <span class="varinfo">integer: -1, then 0, 1...</span>
+                    <img src="crossmini.png"/></p>
+                
+                
+                <p class="output function" id="o24">Function.
+                    <span class="varinfo">
+                        Input: array of strings, string...</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o25">Done. 
+                    <span class="varinfo">integer: 1, then 2, 2...</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o26">Done. 
+                    <span class="varinfo">integer: 10, then 2, 1...</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o27">Loop. 
+                    <span class="varinfo">Runs 3 times, then 4 times, 3...</span> 
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o28">- Done. 
+                    <span class="varinfo">integer: 1, then 3, 1...</span>
+                    <img src="crossmini.png"/></p>
+                
+                
+                <p class="output funcend" id="o29"><br></p>
+                <p class="output" id="o30">Done.
+                    <span class="varinfo">list: 'male', 'female'...</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o31">Loop. 
+                    <span class="varinfo">Runs 4 times.</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o32">Done.
+                    <span class="varinfo">integer: 0</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o33">Done.
+                    <span class="varinfo">integer: 0</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o34">Done.
+                    <span class="varinfo">integer: 0</span>
+                    <img src="crossmini.png"/></p>
+                
+                <br>
+                <p class="output" id="o35"><br></p>
+                <p class="output" id="o36">Done.
+                    <span class="varinfo">array of strings:10 elements</span>
+                </p>
+                <br>
+                
+                
+                <p class="output" id="o37">Loop. 
+                    <span class="varinfo">Runs 34 times.</span> 
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o38"><br></p>
+                <p class="output" id="o39"><br></p>
+                <p class="output" id="o40"> - Done. 
+                    <span class="varinfo">
+                        array: {'John Boehner decided that... </span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o41">- Loop. 
+                    <span class="varinfo">
+                        Runs 89 times, then 75, 49, 193...</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o42"><br></p>
+                <p class="output" id="o43"><br>- - Done. 
+                    <span class="varinfo">
+                        array: {'John', 'Boehner', 'decided', ...}</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o44">- - Loop.
+                    <span class="varinfo">
+                        Runs 43 times, then 32, then 12...</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o45">- - - Branch. 
+                    <span class="varinfo">Taken 9 times.</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o46">- - - - Done.
+                    <span class="varinfo">
+                        array:{'John', 'Boehner', 'decided'...}</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o47"><br></p>
+                <p class="output" id="o48">- - Loop.
+                    <span class="varinfo">
+                        Runs 4 times, then 12, then 1...</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o49">- - - Done.</p>  
+                <p class="output" id="o50"><br></p>
+                <p class="output" id="o51">- - Done. 
+                    <span class="varinfo">array:{{array}, {array}}</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o52"><br><br></p>
+                <p class="output" id="o53">- - Done. 
+                    <span class="varinfo">
+                        string: 'female', then 'male', 'both'...</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o54">- - Done.</p>
+                
+                <br>                
+                <p class="output" id="o55"><br></p>                
+                <p class="output" id="o56">Loop. 
+                    <span class="varinfo">Runs 12,384 times.</span> 
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o57">- Branch. 
+                    <span class="varinfo">Taken 2,390 times.</span> 
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o58">- - Done. (2,390 times)</p>
+                
+                
+                
+                <br>
+                <p class="output" id="o59"><br></p>
+                <p class="output" id="o60"><br><br>Done.
+                    <span class="varinfo">
+                        list: {'he', 'baseball'...}</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o61"><br>Done. 
+                    <span class="varinfo">
+                        list: {'baseball', 'politician',...}</span>
+                    <img src="crossmini.png"/></p>
+                
+                
+                
+                <br>
+                <p class="output" id="o62"><br><br></p>
+                <p class="output" id="o63">Loop. 
+                    <span class="varinfo">Runs 1,786 times.</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o64">- Done.
+                    <span class="varinfo">
+                        floating-point:'11.2', '3.4',....</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o65">- Done.
+                    <span class="varinfo">
+                        floating-point:'100.00', '100.0',....</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o66">- Done.
+                    <span class="varinfo">
+                        floating-point:'0.112', '0.334',....</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o67">- Done.
+                    <span class="varinfo">
+                        floating-point:'0.112', '0.334',....</span>
+                    <img src="crossmini.png"/></p>
+                
+                <br>
+                <p class="output" id="o68"><br></p>
+                <p class="output" id="o69">Done.</p>
+
+                
+                <p><img src="BLOCK.png" height="140px;"></p>
+                <p class="output" id="o70">
+                    <br><br><br>Done.
+                    <span class="varinfo">integer: 3.12</span>
+                    </p>
+                <p class="output" id="o71">Done. 
+                    <span class="varinfo">string: 'male'</span>
+                    <img src="crossmini.png"/></p>
+                <p><img src="BLOCK.png" height="73px;"></p>
+            
+                
+                
+                <p class="output" id="o72">Branch.
+                    <span class="varinfo">Taken 15 times.</span>
+                    <img src="crossmini.png"/></p>
+                <p><img src="BLOCK.png" height="77px;"></p>
+               
+           
+                
+                <p class="output" id="o73">Done. 
+                    <span class="varinfo">string: 'female'</span>
+                    <img src="crossmini.png"/></p>
+                <p><img src="BLOCK.png" height="79px;"></p>
+
+                
+                
+                <p class="output" id="o74"><br></p>
+                <p class="output" id="o75"><br>Done. 
+                    <span class="varinfo">
+                        table: {title:"Male Words", columns:...}</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o76">Loop. 
+                    <span class="varinfo">
+                        Runs 50 times.
+                    </span></p>
+                <p class="output" id="o77">- Branch. 
+                    <span class="varinfo">Taken 3 times.</span> 
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o78">- - Done.
+                    <span class="varinfo">integer: 100</span></p>
+                <p class="output" id="o79">- Branch.
+                    <span class="varinfo">Taken 47 times.</span> 
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o80">- - Done.
+                    <span class="varinfo">double: 11.2, then 10.8, 9.5...</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o81"><br>Done. 
+                    <span class="varinfo">
+                        table: {{11.2, 72, 02, 'prime'}...}</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o82">Done.</p>
+                <p><img src="BLOCK.png" height="387px;"></p>
+
+                
+                <p class="output" id="o83"><br>Done. 
+                    <span class="varinfo">
+                        table: {title:"Female Words", columns:...}</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o84">Loop. 
+                    <span class="varinfo">
+                        Runs 50 times.
+                    </span></p>
+                <p class="output" id="o85">- Branch. 
+                    <span class="varinfo">Taken 4 times.</span> 
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o86">- - Done.
+                    <span class="varinfo">integer: 100</span></p>
+                <p class="output" id="o87">- Branch.
+                    <span class="varinfo">Taken 46 times.</p>
+                <p class="output" id="o88">- - Done.
+                    <span class="varinfo">double: 100.0, then 100.0, 51.6...</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o89"><br>Done. 
+                    <span class="varinfo">
+                        table: {{100.0, 0, 29, 'pregnant'}...}</span>
+                    <img src="crossmini.png"/></p>
+                <p class="output" id="o89">Done.</p>
+
+                
+            </div>
+        </div>    
+    </body>
+</html>

@@ -1,0 +1,138 @@
+/* CSS of test1.html (the one column version) */
+
+body {
+    background-color: #e6e3d6;
+}
+p{
+    color:inherit;
+    margin: 0;
+}
+
+#content{
+    margin: auto;
+    width:900px;
+}
+
+.code{
+    margin-top: 3px;
+    margin-bottom:0px;
+    font-size: 23px;
+    font-family: adamina;
+    color: dimgrey;
+}
+
+.console{
+    margin-top: 3px;
+    margin-bottom: 5px;
+    font-size: 3em;
+    font-family: abel;
+    color: #7c5e5e;
+}
+
+.code.emphasized{
+    margin-top: 40px;
+    font-size: 1.4em;
+    font-family: abel;
+    position:relative;
+}
+.emphasized.console{
+    margin-bottom: 40px;
+}
+.rg_var{
+    font-size: 20px;
+    text-align: right;
+    margin:0px 10px 0px 0px;
+    color:inherit;
+}
+.pval{
+    font-size: 17px;
+    height:25px;
+    margin:0px 0px 0px 10px;
+    vertical-align: baseline;
+    position:relative;
+    top:-10px;
+}
+.result{
+}
+.module{
+    color:whitesmoke;
+    background-color: #8a47ad;
+    font-size: 65%;
+    padding: 4px;
+    position:relative;
+    bottom:0.3em;
+}
+.indication{
+    font-size: 30%;
+    color: #a3a3a3;
+}
+
+.description{
+    color: darkslategrey
+}
+.realtimelink{
+    text-decoration: underline
+}
+
+.bigfunc{
+    border-style: solid;
+    border-width: 1px;
+    border-color:darkgray;
+    padding-right: 10px;
+    padding-left: 10px;
+    position: relative;
+    right:10px;
+    margin-top: 20px;
+}
+
+.func {
+    position:relative;
+    left:-25px;
+    background-color: #e6e3d6;
+    font-size: 100%;
+    border-color: darkgray;
+    border-width: 1px;
+    border-style: solid;
+    padding:5px;
+    position:relative;
+    bottom:0.1em;
+    margin-right: -25px;
+}
+
+
+.branch{
+    position:relative;
+    left:10px;
+    border-left-color: #d0d0d0;
+    border-left-style: dotted;
+    border-left-width: 2px;
+    padding-left: 10px;
+}
+
+
+@media (max-width:1000px){
+    #content{
+        width: 700px;
+    }
+    .code{
+        font-size:18px;
+    }
+    .indication{
+        display:none;
+    }
+}
+
+@media (max-width:800px){
+    #content{
+        width: 500px;
+    }
+    .code{
+        font-size:13px;
+    }
+    .console{
+        font-size:20px;
+    }
+    .indication{
+        font-size:13px;
+    }
+}    
