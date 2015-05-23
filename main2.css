@@ -87,10 +87,12 @@ span.indent {
     margin: -10px;
 }
 div.result{
-    margin-top:30px;
     margin-bottom: 10px;
     width:900px;
     display:block;
+}
+.sentence{
+    margin-top:30px;
 }
 div.summary{
     height:130px;
@@ -103,12 +105,15 @@ div.tablesummary{
 }
 .explanation{
     margin:auto;
-    margin-top:20px;
+    margin-top:30px;
     width:500px;
     font-size: 18px;
     text-align: left;
     color: dimgray;
     font-family: abel;
+}
+.lookup{
+    margin-top:5px;
 }
 
     
