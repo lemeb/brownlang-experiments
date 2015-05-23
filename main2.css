@@ -96,12 +96,14 @@ div.result{
 }
 div.summary{
     height:130px;
+    margin-top:30px;
 }
 div.sentence{
     height:70px;
 }
 div.tablesummary{
     height:380px;
+    margin-top:30px;
 }
 .explanation{
     margin:auto;
