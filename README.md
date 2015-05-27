@@ -38,9 +38,13 @@ One of the big pains in console-based interfaces (such as R, iPyNotebook, etc.) 
 ## GUI
 I tried to link the interface I made with a Python server. Basically, you can input an instruction in the "literary" form and you will be able to see the result on the web page. (The precise instructions that I have implemented are available in a moment.) 
 For now, I've tried to do something I could run locally on my computer. And it works! Instructions are on the page.
+
 The downside of it is that, if you want to run it, you have to install Flask. That being said, the installation is *really* simple:
+
 1. (In the Terminal) go to the folder `python_console` where `hello.py` is located.
+
 2. Run `sudo easy_install virtualenv; sudo easy_install Flask; python hello.py`
+
 3. Go to `http://127.0.0.1:5000/`
 
 ### Functions implemented (for now)
