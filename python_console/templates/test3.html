@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://use.edgefonts.net/abel:n4:all.js"></script>
+<script src="http://use.edgefonts.net/adamina:n4:all.js"></script>
+<script src="http://use.edgefonts.net/sorts-mill-goudy:n5,i5:all.js"></script>
+<script src="http://use.edgefonts.net/old-standard:n4,i4,n7:all;prata:n4:all.js"></script>
+<script src="http://use.edgefonts.net/andada:n4:all;average:n4:all;cardo:n4,i4,n7:all.js"></script>
+
+        <title>trojan - Test #3</title>
+        <link rel="stylesheet" href="../static/main2.css">
+          <script type=text/javascript>
+    var num_of_instructions = 1;
+
+    // Hide "Type your instruction here..."
+
+    $(document).ready(function() {
+
+    $('.hidden').click(function(){
+        $(this).removeClass("hidden");
+    });
+
+
+        $('#leftcol').keypress(function(e) {
+            if (e.keyCode == 13) {
+                // Prevent default behavior
+                e.preventDefault();
+                var i_w = "#i" + num_of_instructions;
+                var d_w = "#daresult" + num_of_instructions;
+                console.log(i_w);
+                var string_to_write = "<p id=\"result\"" +
+                 "contenteditable=\"false\">" +
+                 "<span id=\"daresult"+ num_of_instructions +
+                 "\">...</span>" +
+                 "</p>";
+                 $('#leftcol').append(string_to_write);
+                // Pass the instruction to the server
+                $.ajax({
+                    url: '/exec',
+                    dataType:'json',
+                    data:{
+                        eval: $(i_w).text()
+                    },
+                    // Display the result
+                    success:function(data) {
+                      $(d_w).text(data.result);
+                      console.log(data.result);
+                    },
+                    statusCode:{
+                        500:function(){
+                            $(d_w).html("Error 500.<br>" +
+                             "<span class=\"small\">Are you sure you " +
+                              "typed the right function?</span>");
+                        }
+                    },
+                    error:function(){
+                      $(d_w).text("Error");
+                    }
+                });
+
+                // Making the previous instruction not editable anymore
+                $(i_w).attr("contenteditable", "false");
+
+                // Display the result
+                num_of_instructions++;
+                string_to_write = "<p class=\"instruction hidden\"" +
+                 "id=\"i" + num_of_instructions +
+                 "\">Type your instruction here... "
+                 + "</p>";
+                 console.log(string_to_write);
+                 $('#leftcol').append(string_to_write);
+                return false;
+            }
+        });
+    });
+  </script>
+
+    </head>
+    <body>
+        <div id="content" >
+            <div class="explanation">
+            These are various tests for the so-called "Trojan" project.
+            On this page is a (relatively functionnal) emulation of a Python console.<br>
+            Here is how it works:
+            <ol>
+                <li>Replace "Type your instruction here" by a Python
+                instruction preceded by print.
+                <br><em>Ex: print len("To infinity... and beyond!")</em></li>
+                <li>But you can also type "literary" instructions!
+                <br><em>Ex: Absolute value of -4</em></li>
+                <li>Here are the functions implemented so far:
+                    <ul>
+                    <li>Absolute value of [number]</li>
+                    <li>Binary value of [number]</li>
+                    <li>Hexadecimal value of [number]</li>
+                    <li>Length of [something - without "s around]</li>
+                    <li>[number] is equal to [number]</li>
+                    <li>[number] is different from [number]</li>
+                </ul></li>
+                <li><em>Current limitations</em>: you can execute only
+                one function at a time. No variable declarations, sorry.</li>
+                <li>Underneath the hood: the instruction is sent to a (virtual)
+                server that (converts if a "literary" instruction, and)
+                executes the instruction.</li>
+            </ol>
+            <div id="leftcol" contenteditable="true">
+
+                <p id="i1" class="instruction hidden">Type your instruction here...</p>
+
+            </div>
+        </div>
+    </body>
+</html>

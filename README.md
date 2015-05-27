@@ -32,3 +32,24 @@ One of the big pains in console-based interfaces (such as R, iPyNotebook, etc.) 
 ## Random ideas
 - Do we want to incentivize users to make their code public? And if yes, what does it imply? Does it imply that it would be some kind of file attached to an article? (like: here is the data we used, do whatever you want with it) Or should we make it the basis of the article? Like, should we make an interpretative engine on top of that?
 - To which extent should a potential programming plaform be different from a publishing platform? (To be frank, I find the idea of merging the two pretty exciting, but we discussed about that with Gabe and this is likely unreachable.)
+
+# May 26 (Léopold)
+
+## GUI
+I tried to link the interface I made with a Python server. Basically, you can input an instruction in the "literary" form and you will be able to see the result on the web page. (The precise instructions that I have implemented are available in a moment.) 
+For now, I've tried to do something I could run locally on my computer. And it works! Instructions are on the page.
+The downside of it is that, if you want to run it, you have to install Flask. That being said, the installation is *really* simple:
+1. (In the Terminal) go to the folder `python_console` where `hello.py` is located.
+2. Run `sudo easy_install virtualenv; sudo easy_install Flask; python hello.py`
+3. Go to `http://127.0.0.1:5000/`
+
+### Functions implemented (for now)
+* Absolute value of [number]
+* Binary value of [number]
+* Hexadecimal value of [number]
+* Length of [something - without "s around]
+* [number] is equal to [number]
+* [number] is different from [number]
+
+## Random ideas
+- Spoke with (Brown Institute's) Charles Berret. He threw the interesting idea of being really serious about implementing third-party services like Wolfram Alpha. Basically, you would able to ask, from the GUI, questions like "What is the population of Jakarta?".
