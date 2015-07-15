@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Example 4</title>
+    <link rel="stylesheet" href="../style.css">
+<script src="http://use.edgefonts.net/abel:n4:all;source-code-pro:n9,n7,n2,n3,n4,n6,n5:all.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+<body>  
+
+    <div id="content">
+        
+        <div id="example4">
+            <h1 class="title">
+                <span class="titlenum">4 - </span>
+                A function inspector
+            </h1>
+            <p class="description">
+                Same as example 1, but with a function.
+                When the user writes a function and uses it later,
+                we could unfold it, and potentially compute the values 
+                of the used variables.
+                <br><br><span style="opacity:0.5">Click on the 
+                <img src="plus.png" style="position:relative;top:1px"/> 
+                icon to unfold the function. <br>Click on the 
+                <img src="compute.png" style="position:relative;top:1px"/> 
+                icon to go further in the inspection by computing the values. </span>
+            </p>
+            <div class="code" id="code4">
+                <strong>def</strong> 
+                <span style="color:#981b1b">greatest_element</span>
+                (table1, table2):<br>
+                <div class="indent" id="function_body">
+                    max_element = <span style="color:purple">None</span><br>
+                    <strong>for</strong>
+                    <span style="color:#1a811a">element</span> 
+                    <strong>in</strong> table1:<br>
+                    <div class="indent firstLoop">
+                        <strong>if</strong> element > max_element:<br>
+                        <div class="indent">
+                            max_element = element
+                        </div>
+                    </div>
+                    max_element1 = max_element<br>
+                    <strong>for</strong>
+                    <span style="color:#1a811a">element</span> 
+                    <strong>in</strong> table2:<br>
+                    <div class="indent secondLoop">
+                        <strong>if</strong> element > max_element:<br>
+                        <div class="indent">
+                            max_element = element
+                        </div>
+                    </div>
+                    <strong>if</strong> max_element1 == max_element:
+                    <div class="indent">
+                       <span style="color:darkgreen; font-weight:bold;">
+                           return
+                        </span> table1
+                    </div>
+                    <strong>else</strong> 
+                    <div class="indent">
+                        <span style="color:darkgreen; font-weight:bold;">
+                        return
+                        </span> 
+                        table2<br>
+                    </div>
+                </div>
+                <br>
+                <br>
+                list1 = [3, 5, 7]<br>
+                list2 = [1, 2, 8]<br>
+                <img src="plus.png" class="plus" id="p4"/>
+                <img src="compute.png" class="plus" id="c4"/>
+                list3 = greatest_element(list1, list2)<br>
+                <div class="indent" id="funcplus"></div>
+            </div>
+        </div>
+        
+        <div id="nav">
+            <div id="prev">
+                <a href="example3.html">&lt; Example 3</a>
+            </div>
+            <div id="next">
+                <a href="example5.html"> > Example 5</a>
+            </div>
+        </div>
+    </div>
+        
+
+<script src="example4.js"></script>
+</body>
+</html>

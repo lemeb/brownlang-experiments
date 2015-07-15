@@ -1,0 +1,481 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Example 2</title>
+    <link rel="stylesheet" href="../style.css">
+<script src="http://use.edgefonts.net/abel:n4:all;source-code-pro:n9,n7,n2,n3,n4,n6,n5:all.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+<body>  
+            
+    <div id="content">
+        
+        <div id="example2">
+            <h1 class="title">
+                <span class="titlenum">2 - </span>
+                An object inspector
+            </h1>
+            
+            <!-- TYPE REPRESENTATIONS -->
+            <p class="description"> 
+                A user should be able to inspect the content of objects easily. 
+                This is, of course, important for debugging. But it is
+                also important for the novice to learn and 
+                become accustomed to the different data types. 
+                In particular,
+                if the GUI displays the different data types in a 
+                graphically specific way, it could make the data 
+                more tangible. 
+                <br>
+                <br>Here are a few examples:
+            </p>
+            <table class="consoleResult">
+                <tr> 
+                    <td class="desObject">Boolean</td>
+                    <td>
+                        <div class="contentObject">
+                            <div class="contentBool alone true">
+                                <img src="../oksmall.png" height="20px">
+                                True</div>
+                        </div>
+                    </td>
+                    <td class="explanation">
+                        Since color is cognitively more powerful than 
+                        text, using green for True and red for False could
+                        make the values more rapidly understandable.
+                    </td>
+                </tr> <!-- BOOL -->
+                <tr> <!-- INT -->
+                    <td class="desObject">Integer</td>
+                    <td>
+                        <div class="contentObject">
+                            <div class="contentFloat alone">45</div>
+                        </div>
+                    </td>
+                </tr> <!-- INT -->
+                <tr> <!-- FLOAT -->
+                    <td class="desObject">Float</td>
+                    <td>
+                        <div class="contentObject">
+                            <div class="contentFloat alone">0.882920</div>
+                        </div>
+                    </td>
+                </tr> <!-- FLT -->
+                <tr> 
+                    <td class="desObject">String</td>
+                    <td>
+                        <div class="contentObject">
+                            <div class="contentString alone">
+                                <span class="apostrophe">'</span>
+                                This is a string.
+                                <span class="apostrophe">'</span></div>
+                        </div>
+                    </td>
+                    <td class="explanation">
+                        The apostrophes are put in gray to indicate that they are
+                        separated from the content of the string.
+                    </td>
+                </tr> <!-- STR -->
+                <tr>
+                    <td class="desObject">Pair</td>
+                    <td>
+                        <div class="contentObject">
+                            <table class="contentPair alone">
+                                <tr class="pairKeyVal">
+                                    <td class="key">Key</td>
+                                    <td>Value</td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        <div class="contentFloat alone">45</div>
+                                    </td>
+                                    <td>
+                                        <div class="contentString alone">
+                                            <span class="apostrophe">'</span>
+                                            Forty-five
+                                            <span class="apostrophe">'</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td class="explanation" rowspan="2">
+                        If we arrive to implement a custom way of display strings,
+                        integers or floats, we could extend them to more complex
+                        data structures that store references to them.
+                    </td>
+                </tr> <!-- PAIR -->
+                <tr> 
+                    <td class="desObject">List</td>
+                    <td>
+                        <div class="contentObject">
+                            <table class="contentList alone">
+                                <tr class="headerList">
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td class="last">2</td>
+                                </tr>
+                                <tr class="valueList">
+                                    <td>
+                                        <div class="contentString alone">
+                                            <span class="apostrophe">'</span>
+                                            John Smith
+                                            <span class="apostrophe">'</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="contentFloat alone">45</div>
+                                    </td>
+                                    <td class="last">
+                                        <div class="contentBool alone false">
+                                            <img src="../notok.png" height="20px">
+                                            False
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr> <!-- LIST -->
+            </table>
+           
+            <!-- LONGER FORM -->
+            <p class="description">
+                We can imagine that more complex objects could be represented
+                in two forms. 
+                <br>The first, complete form would essentially be
+                displayed only if the user tries to access an object directly.
+                <br><br><span style="opacity:0.5">Click on the 
+                <img src="plus.png" style="position:relative;top:1px"/> 
+                icon to see the content of the list.</span>
+            </p>
+            <img src="plus.png" class="plus" id="p2_1"/>
+            <div class="code" id="code1">
+                testList
+            </div>
+            <div class="consoleResult" id="p299r">
+                <div class="structureObject">Structure of testList</div>
+                <div class="contentObject">
+                    <table class="contentList alone">
+                        <tr class="headerList">
+                            <td>0</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td class="last">4</td>
+                        </tr>
+                        <tr class="valueList">
+                            <td>
+                                <div class="contentString alone">
+                                    <span class="apostrophe">'</span>
+                                    Paul Prince
+                                    <span class="apostrophe">'</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="contentFloat alone">45</div>
+                            </td>
+                            <td>
+                                <div class="contentBool alone true">
+                                    <img src="../ok.png" height="20px">
+                                    True
+                                </div>
+                            </td>
+                            <td>
+                                <div class="contentFloat alone">32.33</div>
+                            </td>
+                            <td class="last">
+                                <div class="contentBool alone false">
+                                    <img src="../notok.png" height="20px">
+                                    False
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- SHORTER FORM -->
+            <p class="description">
+                The second, shorter form would be displayed if the object is
+                referenced in another object and is too big to be displayed. 
+                In that case, a long list in a Pair.
+                <br><br><span style="opacity:0.5">Click on the 
+                <img src="plus.png" style="position:relative;top:1px"/> 
+                icons to see the contents of the pair and the list.</span>
+            </p>
+            <img src="plus.png" class="plus" id="p2_2"/>
+            <div class="code" id="code1b">
+                testPair = {"id#9292b" : testList}
+            </div>
+            <div class="consoleResult" id="p299s">
+                <div class="structureObject">Structure of testPair</div>
+                <div class="contentObject">
+                    <table class="contentPair alone">
+                        <tr class="pairKeyVal">
+                            <td class="key">Key</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr>
+                            <td class="key">
+                                <div class="contentString alone">
+                                    <span class="apostrophe">'</span>
+                                    id#9292b
+                                    <span class="apostrophe">'</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="shortList alone">
+                                    List
+                                    <img src="plus.png" id="p299"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="listPlaceholder"></div>
+            </div>
+            
+            <!-- LA TOTALE -->
+            <p class="description">
+                Now with more complex data structures. 
+                Let us imagine that the user uses a table-like 
+                data structure. The table plays the role of data frame
+                to store information about TV series.
+                This table comprises a large amount of rows.
+                Each row is organized the following way: <br>
+                (0) A pair: 
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                (Key) A string for the name of the series
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                (Value) A list with string of names of the creators of the series
+                <br>(1) A float comprising the rating
+                <br>(2) A tree that lays out the seasons and the episodes. 
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                There are Season objects, which are comprised of an ID (integer),
+                a name (string), and a rating(float). 
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                There are Episode objects, which are comprised of an ID (integer),
+                a name (string), a rating (float), and a duration (time).
+                <br><br><span style="opacity:0.5">Click on the different
+                <img src="plus.png" style="position:relative;top:1px"/> 
+                icons to see the content of the different objects.</span>
+            </p>
+            <img src="plus.png" class="plus" id="p2"/>
+            
+                <!-- DATATABLE -->
+                <div class="code" id="code2">
+                    dataTable = 
+                    <span style="color:darkgray">some instruction...</span><br>
+                </div>
+                <div class="consoleResult" id="dataT">
+                    <div class="structureObject">First row of dataTable</div>
+                    <div class="contentObject">
+                        <table class="dataTable">
+                            <tr class="headerDT">
+                                <td>0</td>
+                                <td>1</td>
+                                <td class="last">2</td>
+                            </tr>
+                            <tr class="valueDT">
+                                <td>
+                                    <table class="contentPair">
+                                        <tr class="pairKeyVal">
+                                            <td class="key">Key</td>
+                                            <td>Value</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="key">
+                                                <div class="contentString">
+                                                    <span class="apostrophe">'</span>
+                                                    Game of Thrones
+                                                    <span class="apostrophe">'</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                <table class="contentList alone">
+                                    <tr class="headerList">
+                                        <td>0</td>
+                                        <td class="last">1</td>
+                                    </tr>
+                                    <tr class="valueList">
+                                        <td>
+                                            <div class="contentString">
+                                                <span class="apostrophe">'</span>
+                                                David Benioff
+                                                <span class="apostrophe">'</span>
+                                            </div>
+                                        </td>
+                                        <td class="last">
+                                            <div class="contentString">
+                                                <span class="apostrophe">'</span>
+                                                D. B. Weiss
+                                                <span class="apostrophe">'</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="padding-left:10px;padding-right:10px;">
+                                    <div class="contentFloat" >4.2384902</div>
+                                </td>
+                                <td style="padding-left:10px;padding-right:10px;">
+                                    <div class="shortTree" >
+                                        Tree
+                                        <img src="plus.png" id="p21"/>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>                
+                    </div>
+                </div>    
+            
+                <!-- TREE -->
+                <div class="contentObject" id="tree">
+                    <div class="contentTree">
+                        <div class="nameTree">Structure of Tree x03921</div> <br>
+                        <div class="contentTreenodes"> 
+                            Root<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;|_ <span class="short">
+                            Season 
+                            <img src="plus.png" style="position:relative;top:3px;" class="p22"/></span>
+                            <div class="contentEpisodeObject">
+                                <div class="nameTree">Structure of Season Object 0xG182</div>
+                                <br>
+                                <table class="contentObject EOitems">
+                                    <tr class="itemEO">
+                                        <td class="nameitem">id</td>
+                                        <td>
+                                            <div class="contentFloat">
+                                                    1
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="itemEO">
+                                        <td class="nameitem">name</td>
+                                        <td><div class="contentString">
+                                                    <span class="apostrophe">'</span>
+                                                    Season 1
+                                                    <span class="apostrophe">'</span>
+                                            </div></td>
+                                    </tr>
+                                    <tr class="itemEO">
+                                        <td class="nameitem">rating</td>
+                                        <td>
+                                            <div class="contentFloat">
+                                                4.283200
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <br>&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;|_ <span class="short">Episode 
+                            <img src="plus.png" style="position:relative;top:3px;" class="p22"/></span>
+                            <div class="contentEpisodeObject">
+                                <div class="nameTree">Structure of Episode Object 0x2A2I</div>
+                                <br>
+                                <table class="contentObject EOitems">
+                                    <tr class="itemEO">
+                                        <td class="nameitem">id</td>
+                                        <td>
+                                            <div class="contentFloat">
+                                                    1
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="itemEO">
+                                        <td class="nameitem">name</td>
+                                        <td><div class="contentString">
+                                                    <span class="apostrophe">'</span>
+                                                    Pilot
+                                                    <span class="apostrophe">'</span>
+                                            </div></td>
+                                    </tr>
+                                    <tr class="itemEO">
+                                        <td class="nameitem">rating</td>
+                                        <td><div class="contentFloat">
+                                                4.1374
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="itemEO">
+                                        <td class="nameitem">duration</td>
+                                        <td>
+                                            <div class="contentTime">
+                                                94:29
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <br>&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;|_ <span class="short">Episode 
+                            <img src="plus.png" style="position:relative;top:3px;" class="p22"/></span>
+                            <div class="contentEpisodeObject">
+                                <div class="nameTree">Structure of Episode Object 0x2A2J</div>
+                                <br>
+                                <table class="contentObject EOitems">
+                                    <tr class="itemEO">
+                                        <td class="nameitem">id</td>
+                                        <td>
+                                            <div class="contentFloat">
+                                                    2
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="itemEO">
+                                        <td class="nameitem">name</td>
+                                        <td><div class="contentString">
+                                                    <span class="apostrophe">'</span>
+                                                    Episode 2
+                                                    <span class="apostrophe">'</span>
+                                            </div></td>
+                                    </tr>
+                                    <tr class="itemEO">
+                                        <td class="nameitem">rating</td>
+                                        <td>
+                                            <div class="contentFloat">
+                                                3.84894
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="itemEO">
+                                        <td class="nameitem">duration</td>
+                                        <td>
+                                            <div class="contentTime">
+                                                92:19
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>                    
+                        </div>
+                </div>
+
+                </div>
+        </div>
+        
+        <div id="nav">
+            <div id="prev">
+                <a href="example1.html">&lt; Example 1</a>
+            </div>
+            <div id="next">
+                <a href="example3.html"> > Example 3</a>
+            </div>
+        </div>
+    </div> 
+                
+        
+
+<script src="example2.js"></script>
+</body>
+</html>

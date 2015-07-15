@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Example 5</title>
+    <link rel="stylesheet" href="../style.css">
+<script src="http://use.edgefonts.net/abel:n4:all;source-code-pro:n9,n7,n2,n3,n4,n6,n5:all.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+<body>  
+
+    <div id="content">
+        
+        <div id="example5">
+            <h1 class="title">
+                <span class="titlenum">5 - </span>
+                An automatic data cleaner
+            </h1>
+            <p class="description">
+                See example 3 -- Only this time, the interface 
+                proactively tells the user what is the best parsing to use for
+                the given input.
+                <br><br><span style="opacity:0.5">Click on the 
+                <img src="plusgreen.png" style="position:relative;top:1px"/> 
+                icon to see this.</span>
+            </p>
+            <img src="plusgreen.png" class="plus p5"/>
+            <div class="code" id="code3">
+                dataTable2 = import.auto('anotherfile.txt')
+            </div>
+            <div class="cleaningInfo">
+                We have cleaned and parsed the data automatically. <br>
+                Click on the <img src="plusgreen.png" class="p5"/> to know more.
+            </div>
+            <div class="dataCleaning">
+                <div class="showTable">
+                    <div class="nameTable">
+                        Structure of dataTable
+                    </div>
+                    <div class="sampleTable">
+                        <table class="sampleTable">
+                          <tr>
+                            <td class="number">\</td>
+                            <td>Distribution</td>
+                            <td>Votes</td> 
+                            <td>Rank</td>
+                            <td>Title</td>
+                            <td>Year</td>
+                          </tr>
+                          <tr>
+                            <td class="number">1</td>
+                            <td>4.....2.4.</td>
+                            <td>5</td> 
+                            <td>5.4</td>
+                            <td>!Next?</td>
+                            <td>(1994)</td>
+                          </tr>
+                          <tr>
+                            <td class="number">2</td>
+                            <td>2000000102</td>
+                            <td>60</td> 
+                            <td>6.1</td>
+                            <td>#1 Single</td>
+                            <td>(2006)</td>
+                          </tr>
+                          <tr>
+                            <td class="number">3</td>
+                            <td>00.01112201</td>
+                            <td>67</td> 
+                            <td>6.9</td>
+                            <td>$#*! My Dad Says</td>
+                            <td>(2010)</td>
+                          </tr>
+                          <tr>
+                            <td class="number">4</td>
+                            <td>2....0.013</td>
+                            <td>13</td> 
+                            <td>5.5</td>
+                            <td>#ByMySide</td>
+                            <td>(2012)</td>
+                          </tr>
+                          <tr>
+                            <td class="number">5</td>
+                            <td>010...3111</td>
+                            <td>16</td> 
+                            <td>6.6</td>
+                            <td>#lovemilla</td>
+                            <td>(2013)</td>
+                          </tr>
+                          <tr>
+                            <td colspan="6" style="color:darkgray;">
+                                ... 565,990 total entries. Show 10 other ones.</td>
+                          </tr>                        
+                        </table>
+                    </div>
+                </div>
+                <div class="cleaningInfo" style="padding-left:0px; width:500px; line-height:1.2em;font-size:15px;margin-top:10px;">
+                    We have automatically detected what seems the best way of
+                    parsing the  data in the file. We have also identified 
+                    other parsing possibilities, although we judged them 
+                    less relevant. You can switch to them by clicking on
+                    "Choose this parsing."
+                </div>
+
+                   <div class="sampleTable">
+                        <table class="sampleTable">
+                          <tr>
+                            <td class="number">\</td>
+                            <td>Distribution</td>
+                            <td>Votes</td> 
+                            <td>Rank</td>
+                            <td>Title</td>
+                            <td>Year</td>
+                          </tr>
+                          <tr>
+                            <td class="number">1</td>
+                            <td>4.....2.4.</td>
+                            <td>5</td> 
+                            <td>5.4</td>
+                            <td>!Next?</td>
+                            <td>(1994)</td>
+                          </tr>
+                          <tr>
+                            <td class="number">2</td>
+                            <td>2000000102</td>
+                            <td>60</td> 
+                            <td>6.1</td>
+                            <td>#1 Single</td>
+                            <td>(2006)</td>
+                          </tr>
+                          <tr>
+                            <td class="number">3</td>
+                            <td>00.01112201</td>
+                            <td>67</td> 
+                            <td>6.9</td>
+                            <td>$#*! My Dad Says</td>
+                            <td>(2010)</td>
+                          </tr>
+                          <tr>
+                            <td class="number">4</td>
+                            <td>{Code</td>
+                            <td>Ed</td> 
+                            <td>(</td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td class="number">5</td>
+                            <td>0000012101</td>
+                            <td>52</td> 
+                            <td>6.9</td>
+                            <td>$#*! My Dad Says</td>
+                            <td>(2010)</td>
+                          </tr>
+                          <tr>
+                            <td colspan="6" style="color:darkgray;">
+                                ... 1,101,215 total entries. Show 10 other ones.</td>
+                          </tr>                        
+                        </table>
+                        <div class="chooseTable">Choose this parsing instead.</div>
+                    </div>                
+                
+                    <div class="sampleTable">
+                        <table class="sampleTable">
+                            <tr>
+                                <td class="number">\</td>
+                                <td>Distribution</td>
+                                <td>Votes</td> 
+                                <td>Rank</td>
+                                <td>Title</td>
+                                <td>Year</td>
+                            </tr>
+                            <tr>
+                                <td class="number">4</td>
+                                <td>{Code</td>
+                                <td>Ed</td> 
+                                <td>(</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="number">13</td>
+                                <td>{Corn</td>
+                                <td>Star</td> 
+                                <td>(</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="number">15</td>
+                                <td>{Dog</td>
+                                <td>Ed</td> 
+                                <td>Puirsuit</td>
+                                <td>(</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="number">17</td>
+                                <td>{Easy,</td>
+                                <td>Writer</td> 
+                                <td>(</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="number">19</td>
+                                <td>{Ed,</td>
+                                <td>Goes</td> 
+                                <td>to</td>
+                                <td>Court</td>
+                                <td>(</td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" style="color:darkgray;">
+                                    ... 535,225 total entries. Show 10 other ones.
+                                </td>
+                            </tr>
+                            </table>
+                        <div class="chooseTable">
+                            Choose this parsing instead.
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+        
+        <div id="nav">
+            <div id="prev">
+                <a href="example4.html">&lt; Example 4</a>
+            </div>
+            <div id="next">
+                <a href="example6.html"> > Example 6</a>
+            </div>
+        </div>
+    </div>
+        
+
+<script src="example5.js"></script>
+</body>
+</html>

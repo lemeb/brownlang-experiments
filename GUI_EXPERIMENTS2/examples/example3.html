@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Example 3</title>
+    <link rel="stylesheet" href="../style.css">
+<script src="http://use.edgefonts.net/abel:n4:all;source-code-pro:n9,n7,n2,n3,n4,n6,n5:all.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+<body>  
+
+    <div id="content">
+        
+        <div id="example3">
+            <h1 class="title">
+                <span class="titlenum">3 - </span>
+                An automatic data cleaning assistant
+            </h1>
+            <p class="description">
+                Using existing data cleaning algorithms, we should be able to
+                proactively tell the user if his data seems correctly parsed, 
+                or if there are apparent mistakes, and which lines 
+                appear problematic.
+                <br> We could also think of an automatic data parser
+                -- see Example 5.
+                <br><br><span style="opacity:0.5">Click on the 
+                <img src="plusred.png" style="position:relative;top:1px"/> 
+                icon to see this.</span>
+            </p>
+            <img src="plusred.png" class="plus" id="p3">
+            <div class="code" id="code3">
+                dataTable = import.auto('afile.txt')
+            </div>
+            <div class="dataCleaning">
+                <div class="showTable">
+                    <div class="nameTable">
+                        Structure of dataTable
+                    </div>
+                    <div class="sampleTable">
+                        <table class="sampleTable">
+                          <tr>
+                            <td class="number">\</td>
+                            <td>Distribution</td>
+                            <td>Votes</td> 
+                            <td>Rank</td>
+                            <td>Title</td>
+                            <td>Year</td>
+                          </tr>
+                          <tr>
+                            <td class="number">1</td>
+                            <td>4.....2.4.</td>
+                            <td>5</td> 
+                            <td>5.4</td>
+                            <td>!Next?</td>
+                            <td>(1994)</td>
+                          </tr>
+                          <tr>
+                            <td class="number">2</td>
+                            <td>2000000102</td>
+                            <td>60</td> 
+                            <td>6.1</td>
+                            <td>#1 Single</td>
+                            <td>(2006)</td>
+                          </tr>
+                          <tr>
+                            <td class="number">3</td>
+                            <td>00.01112201</td>
+                            <td>67</td> 
+                            <td>6.9</td>
+                            <td>$#*! My Dad Says</td>
+                            <td>(2010)</td>
+                          </tr>
+                          <tr>
+                            <td class="number">4</td>
+                            <td>{Code</td>
+                            <td>Ed</td> 
+                            <td>(</td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td class="number">5</td>
+                            <td>0000012101</td>
+                            <td>52</td> 
+                            <td>6.9</td>
+                            <td>$#*! My Dad Says</td>
+                            <td>(2010)</td>
+                          </tr>
+                          <tr>
+                            <td colspan="6" style="color:darkgray;">
+                                ... 1,101,215 total entries. Show 10 other ones.</td>
+                          </tr>                        
+                        </table>
+                    </div>
+                </div>
+                <div class="cleaningWarning">Your data seem problematic. 
+                    <br> Here is a sample of problematic lines.
+                </div>
+                <table class="sampleTable warningTable">
+                    <tr>
+                        <td class="number">\</td>
+                        <td>Distribution</td>
+                        <td>Votes</td> 
+                        <td>Rank</td>
+                        <td>Title</td>
+                        <td>Year</td>
+                    </tr>
+                    <tr>
+                        <td class="number">4</td>
+                        <td>{Code</td>
+                        <td>Ed</td> 
+                        <td>(</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="number">13</td>
+                        <td>{Corn</td>
+                        <td>Star</td> 
+                        <td>(</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="number">15</td>
+                        <td>{Dog</td>
+                        <td>Ed</td> 
+                        <td>Puirsuit</td>
+                        <td>(</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="number">17</td>
+                        <td>{Easy,</td>
+                        <td>Writer</td> 
+                        <td>(</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="number">19</td>
+                        <td>{Ed,</td>
+                        <td>Goes</td> 
+                        <td>to</td>
+                        <td>Court</td>
+                        <td>(</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" style="color:darkgoldenrod;">
+                            ... 535,225 total entries. Show 10 other ones.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div id="nav">
+            <div id="prev">
+                <a href="example2.html">&lt; Example 2</a>
+            </div>
+            <div id="next">
+                <a href="example4.html"> > Example 4</a>
+            </div>
+        </div>
+    </div>
+        
+
+<script src="example3.js"></script>
+</body>
+</html>

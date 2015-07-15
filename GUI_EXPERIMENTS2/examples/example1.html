@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Example 1</title>
+    <link rel="stylesheet" href="../style.css">
+<script src="http://use.edgefonts.net/abel:n4:all;source-code-pro:n9,n7,n2,n3,n4,n6,n5:all.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+<body>  
+
+    <div id="content">
+        
+        <div id="example1">
+            <h1 class="title">
+                <span class="titlenum">1 - </span>
+                A loop inspector
+            </h1>
+            <p class="description"> 
+                The idea is pretty simple here. In order to make loops 
+                more tangible, the GUI offers the option to see a loop 
+                in its entirety.
+                <br><br> When the user clicks on the <img src="plus.png"/> icon 
+                next to a loop instruction, the loop "unfolds". What that 
+                means is that all the instructions executed multiple times inside
+                the loop are displayed. Also, if there an iteration variable 
+                (i in this case), it is automatically converted to the real value.
+                <br><br>After the loop is unfolded, when the user clicks on the 
+                <img src="compute.png"/> icon, the program computes the values
+                of the variable changed in the loop in order to see
+                the evolution of theses variables.
+                <br><br><span style="opacity:0.5">You can click on both the 
+                <img src="plus.png" style="position:relative;top:1px"/> 
+                icon and the 
+                <img src="compute.png" style="position:relative;top:1px"/> 
+                icon in this demo.</span>
+            </p>
+            <img src="plus.png" class="plus" id="p1"/>
+            <img src="compute.png" class="plus" id="c1"/>
+            <div class="code" id="code1">
+                for i in range(1:10):<br>
+                    <div class="indent">
+                        a[i] = sqrt(i)<br>
+                        e[i] = a[i]*3<br>
+                    </div>
+            </div>
+        </div>
+        
+        <div id="nav">
+            <div id="prev">
+                <a href="../index.html">&lt; Index</a>
+            </div>
+            <div id="next">
+                <a href="example2.html"> > Example 2</a>
+            </div>
+        </div>
+    </div>
+        
+
+<script src="example1.js"></script>
+</body>
+</html>

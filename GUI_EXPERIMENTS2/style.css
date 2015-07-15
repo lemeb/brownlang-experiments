@@ -1,0 +1,346 @@
+
+body {
+    background-color: #f9f7f2;
+}
+#content{
+    margin:auto;
+    width:800px;
+    font-family: abel, sans-serif;
+    font-size: 20px;
+}
+.code {
+    font-family: source-code-pro;
+    font-size:16px;
+    padding-left: 50px;
+}
+.indent{
+    position: relative;
+    left:20px;
+    padding-left: 20px;
+}
+.individualindent{
+    border-bottom: 0.12em dashed darkgray;
+    margin-bottom: 5px;
+    display: inline-block;
+    padding-right: 5px;
+}
+#content > p{
+    margin-bottom: 0px;
+}
+.title{
+    display: block;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.title .titlenum{
+    color:darkgray;
+}
+.itemRDD{
+    display: inline-block;
+    border: 1px solid darkgray;
+    margin: 3px;
+    padding:3px;
+}
+.itemtype{
+    font-family: abel;
+    font-size: 0.8em;
+}
+.plus{
+    float: left;
+    position: relative;
+    top: 2px;
+    margin-right: 0px;
+}
+#code1 > .number{
+    bottom: -2px;
+    left: 10px;
+}
+.contentRDD > .number{
+    left:-15px;
+    bottom:1px;
+}
+.contentRDD{
+    position:relative;
+    top:8px;
+    border: 1px solid darkgray;
+    display: inline-block;
+    padding-right: 7px;
+display:none;
+}
+#code2 .structureObject{
+display:none;
+}
+.consoleResult .structureObject{
+    margin-bottom: 5px;
+}
+.structureObject, .nameTree, .nameTable{
+    margin-bottom: -7px;
+    margin-top: 7px;
+    color: darkgray;
+    font-family: source-code-pro;
+    font-size: 16px;
+}
+.contentTreenodes{
+    margin-top: -15px;
+    font-size: 18px;
+    margin-left: 20px;
+}
+.contentTree{
+    display:none;
+}
+.number{
+    position: relative;
+    float:left;
+    color: darkgray;
+    font-size: 0.9em;
+}
+.EOitems{
+    margin-top: -15px;
+    font-family: abel, sans-serif;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid darkgray;
+}
+.cleaningWarning{
+    font-family: source-code-pro, serif;
+    font-size: 16px;
+    color:indianred;
+    margin-top: 5px;
+}
+.dataCleaning{
+    padding-left: 50px;
+    display:none;
+}
+table.sampleTable{
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+.sampleTable tr, .sampleTable td{
+    font-size: 0.95em;
+    border:1px solid darkgray;
+    padding:5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.warningTable tr, .warningTable td{
+    border-color: indianred;
+}
+.warningTable{
+    color:indianred;
+}
+.warningTable .number{
+    color:darkgoldenrod;
+}
+td.number{
+    border:0;
+}
+#c4{
+    margin-left: -35px;
+}
+#p4{
+    margin-left: -50px;
+}
+#p41, #c41{
+    position:relative;
+    top: -239px;
+    left:15px;
+}
+#p42, #c42{
+    position:relative;
+    top: -150px;
+}
+#prev{
+    float:left;
+}
+#next{
+    float:right;
+}
+#nav{
+    width:300px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+a{
+    color:#2f89c1;
+    text-decoration: none;
+}
+.cleaningInfo{
+    font-family: source-code-pro;
+    font-size: 16px;
+    color: #5d955d;
+    padding-left: 50px;
+}
+.p5{
+    position: relative;
+    top:3px;
+}
+.chooseTable{
+    font-family: source-code-pro;
+    font-size: 16px;
+    color: #5d6895;
+    text-decoration: underline;
+}
+#code6{
+    margin-top: 40px;
+    margin-bottom: 45px;
+}
+table.contentRDD{
+    border-collapse:collapse;
+    border: 0;
+}
+.contentRDD td{
+    border: 1px solid darkgray;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: auto;
+}
+.itemType{
+    text-align: center;
+    font-size: 12px;
+}
+table.pairItem{
+    border-collapse: collapse;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.beforeafter{
+    font-family: source-code-pro;
+    font-size: 16px;
+    color:darkgray;
+    margin-top: 15px;
+}
+#abovecode6, #belowcode6{
+    display:none;
+}
+#belowcode6{
+    position: relative;
+    top:10px;
+}
+.consoleResult{
+    position:relative;
+    left:50px;
+}
+.contentObject{
+    padding: 10px;
+    border: 1px solid darkgray;
+    display:inline-block;
+}
+.contentFloat{
+    font-size: 18px;
+}
+.desObject{
+    font-family: source-code-pro;
+    font-size: 16px;
+    padding-right: 20px;
+    color: dimgray;
+}
+.alone{
+    font-size: 28px;
+}
+.apostrophe{
+    color: darkgray;
+}
+.pairKeyVal, .headerList{
+    font-size: 14px;
+    color: darkgray;
+}
+.contentPair .key{
+    border-right: 1px solid darkgray;
+}
+table.contentPair, table.contentList{
+    margin: -10px;
+    border-collapse: collapse;
+}
+.contentPair td, .contentList td{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.contentPair tr, .contentList tr{
+    margin-bottom: 10px;
+}
+.contentList td{
+    border-right: 1px solid darkgray;
+}
+.contentList td.last{
+    border-right: 0;
+}
+.contentBool.true{
+    color:#1f981f;
+}
+.contentBool.false{
+    color:#8a0000;
+}
+.explanation{
+    font-size: 15px;
+    color:dimgray;
+    padding: 10px;
+    background-color: #efddc8;
+    max-width:300px;
+}
+.consoleResult{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.shortList, .shortTree, .short{
+    color:dimgray;
+}
+table.dataTable{
+    font-family: abel;
+    border-collapse: collapse;
+    margin: -10px;
+}
+.headerDT{
+    border-bottom: 1px solid darkgray;
+    font-size: 15px;
+    color:darkgrey;
+}
+.headerDT td{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.dataTable td{
+    border-right: 1px solid darkgray;
+}
+.valueDT .contentPair{
+    margin:-2px;
+}
+.dataTable td.last{
+    border-right: none;
+}
+.dataTable .contentList{
+    margin:-2px;
+    margin-bottom: 0px;
+}
+.dataTable .contentPair tr.pairKeyVal{
+    border-bottom: 1px solid darkgray;
+}
+.contentString{
+    font-size: 18px;
+}
+.contentString.alone{
+    font-size: 28px;
+}
+#tree{
+    margin-left: 50px;
+    padding-top: 0px;
+}
+.nameitem{
+    color:darkgray;
+    padding-right: 5px;
+}
+.contentEpisodeObject{
+    margin-left: 50px;
+}
+#belowcode6 .contentPair, #abovecode6 .contentPair {
+    margin: -2px;
+    position:relative;
+    right:9px;
+    width: 106.5%;
+}
+#belowcode6 .contentPair td, #abovecode6 .contentPair td{
+    border-right: none;
+}
+#belowcode6 .contentPair .key, #abovecode6 .contentPair .key{
+    border-left: none;
+}
+

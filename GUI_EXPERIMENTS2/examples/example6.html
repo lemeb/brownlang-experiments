@@ -1,0 +1,378 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Example 6</title>
+    <link rel="stylesheet" href="../style.css">
+<script src="http://use.edgefonts.net/abel:n4:all;source-code-pro:n9,n7,n2,n3,n4,n6,n5:all.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+<body>  
+
+    <div id="content">
+        
+        <div id="example6">
+            <h1 class="title">
+                <span class="titlenum">6 - </span>
+                An on-the-go map-reduce tester
+            </h1>
+            <p class="description">
+                Map-reduce are important operations in functional programming. 
+                In particulart, it can be super common when working with data
+                tables (using lambda functions that take each row as argument.)
+                <br> We could make a tester that would display in real time the 
+                5 first rows of the previous object and the 5 first rows of the
+                next object, so that the user would know in real-time what they
+                are doing.
+                <br><br><span style="opacity:0.5">Click on the 
+                <span style="border: 1px dotted darkgray; padding-left:1px;">|</span> 
+                cursor to see this in action.</span>
+            </p>
+            <div id="abovecode6">
+                <table class="contentRDD">
+                    <tr>
+                        <td style="color:darkgray">\</td>
+                        <td>Value 1</td>
+                        <td>Value 2</td>
+                    </tr>
+                    <tr>
+                        <td style="color:darkgray">0</td>
+                        <td>
+                            <table class="contentPair">
+                                <tr class="pairKeyVal">
+                                    <td class="key">Key</td>
+                                    <td>Value</td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        <div class="contentFloat">
+                                            3.6818181818181817
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="contentString">
+                                            <span class="apostrophe">'</span>
+                                            Breaking Bad
+                                            <span class="apostrophe">'</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <div class="contentString">
+                                <span class="apostrophe">'</span>
+                                4bdeu9
+                                <span class="apostrophe">'</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="color:darkgray">1</td>
+                        <td>
+                            <table class="contentPair">
+                                <tr class="pairKeyVal">
+                                    <td class="key">Key</td>
+                                    <td>Value</td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        <div class="contentFloat">
+                                            4.2616378894940329 
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="contentString ">
+                                            <span class="apostrophe">'</span>
+                                            Mad Men
+                                            <span class="apostrophe">'</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <div class="contentString">
+                                <span class="apostrophe">'</span>
+                                a37hde
+                                <span class="apostrophe">'</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="color:darkgray">2</td>
+                        <td>
+                            <table class="contentPair">
+                                <tr class="pairKeyVal">
+                                    <td class="key">Key</td>
+                                    <td>Value</td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        <div class="contentFloat">
+                                            2.3993049429307839 
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="contentString ">
+                                            <span class="apostrophe">'</span>
+                                            Entourage
+                                            <span class="apostrophe">'</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <div class="contentString">
+                                <span class="apostrophe">'</span>
+                                g28ds2
+                                <span class="apostrophe">'</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="color:darkgray">3</td>
+                        <td>
+                            <table class="contentPair">
+                                <tr class="pairKeyVal">
+                                    <td class="key">Key</td>
+                                    <td>Value</td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        <div class="contentFloat">
+                                            4.0248293840220494
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="contentString ">
+                                            <span class="apostrophe">'</span>
+                                            Under the Dome
+                                            <span class="apostrophe">'</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <div class="contentString">
+                                <span class="apostrophe">'</span>
+                                2ee9ed
+                                <span class="apostrophe">'</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="color:darkgray">4</td>
+                        <td>
+                            <table class="contentPair">
+                                <tr class="pairKeyVal">
+                                    <td class="key">Key</td>
+                                    <td>Value</td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        <div class="contentFloat">
+                                            3.2845693O58538034 
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="contentString ">
+                                            <span class="apostrophe">'</span>
+                                            Game of Thrones
+                                            <span class="apostrophe">'</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <div class="contentString">
+                                <span class="apostrophe">'</span>
+                                a2Z9dd
+                                <span class="apostrophe">'</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="beforeafter">
+                    table1 before the transformation
+                </div>
+            </div>
+            <div class="code" id="code6">
+                <span class="previousline">
+                    <span style="opacity:0.05">Instructions<br></span>
+                    <span style="opacity:0.1">Instructions<br>
+                    Instructions<br></span>
+                    <span style="opacity:0.2">Instructions<br>
+                    Instructions<br></span>
+                    <span style="opacity:0.3">Instructions<br>
+                    Instructions<br></span>
+                    <span style="opacity:0.4">Instructions<br>
+                    Instructions<br></span>
+                    <span style="opacity:0.5">Instructions<br>
+                    Instructions<br></span>
+                    <span style="opacity:0.6">Instructions<br>
+                    Instructions<br></span>
+                    <span style="opacity:0.7">Instructions<br>
+                    Instructions<br></span>
+                    table0 = import.auto('afileagain.txt')<br>
+                    table1 = table0.map(lambda (x,y,z): ((x,y),z)<br></span>
+                    table2 = table1.map(<span id="lambda6" style="border: 1px dotted darkgray">lambda ((x,y),z) : ((x, upper(y)))</span>)
+            </div>
+            <div id="belowcode6">
+                <div class="beforeafter">
+                    table2 after the transformation
+                </div>
+                <table class="contentRDD">
+                    <tr>
+                        <td style="color:darkgray">\</td>
+                        <td>Value 1</td>
+                    </tr>
+                    <tr>
+                        <td style="color:darkgray">0</td>
+                        <td>
+                            <table class="contentPair">
+                                <tr class="pairKeyVal">
+                                    <td class="key">Key</td>
+                                    <td>Value</td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        <div class="contentFloat">
+                                            3.6818181818181817
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="contentString ">
+                                            <span class="apostrophe">'</span>
+                                            BREAKING BAD
+                                            <span class="apostrophe">'</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="color:darkgray">1</td>
+                        <td>
+                            <table class="contentPair">
+                                <tr class="pairKeyVal">
+                                    <td class="key">Key</td>
+                                    <td>Value</td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        <div class="contentFloat">
+                                            4.2616378894940329 
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="contentString ">
+                                            <span class="apostrophe">'</span>
+                                            MAD MEN
+                                            <span class="apostrophe">'</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="color:darkgray">2</td>
+                        <td>
+                            <table class="contentPair">
+                                <tr class="pairKeyVal">
+                                    <td class="key">Key</td>
+                                    <td>Value</td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        <div class="contentFloat">
+                                            2.3993049429307839 
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="contentString ">
+                                            <span class="apostrophe">'</span>
+                                            ENTOURAGE
+                                            <span class="apostrophe">'</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="color:darkgray">3</td>
+                        <td>
+                            <table class="contentPair">
+                                <tr class="pairKeyVal">
+                                    <td class="key">Key</td>
+                                    <td>Value</td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        <div class="contentFloat">
+                                            4.0248293840220494
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="contentString ">
+                                            <span class="apostrophe">'</span>
+                                            UNDER THE DOME
+                                            <span class="apostrophe">'</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="color:darkgray">4</td>
+                        <td>
+                            <table class="contentPair">
+                                <tr class="pairKeyVal">
+                                    <td class="key">Key</td>
+                                    <td>Value</td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        <div class="contentFloat">
+                                            3.2845693O58538034 
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="contentString ">
+                                            <span class="apostrophe">'</span>
+                                            GAME OF THRONES
+                                            <span class="apostrophe">'</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div> 
+        
+        <div id="nav">
+            <div id="prev">
+                <a href="example5.html">&lt; Example 5</a>
+            </div>
+            <div id="next">
+                <a href="example7.html"> > Example 7</a>
+            </div>
+        </div>
+    </div>
+        
+
+<script src="example6.js"></script>
+<script src="typed.js"></script>
+</body>
+</html>
