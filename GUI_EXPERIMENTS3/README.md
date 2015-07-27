@@ -1,6 +1,6 @@
 # GUI_EXPERIMENTS 3
 
-This experiment focuses on the idea of having the values of the variables always displayed next to the code. This is implemented in JS, and you can actually play with it. It might get buggy, but you can implement pretty much whatever you want. And you're happy to break this :)
+This experiment focuses on the idea of having the values of the variables always displayed next to the code. This is implemented in JS, and you can actually play with it. It might get buggy, but you can implement pretty much whatever you want. And you're welcome to break this :)
 
 ## How to use it:
 - Type code in it. Really, any code.
