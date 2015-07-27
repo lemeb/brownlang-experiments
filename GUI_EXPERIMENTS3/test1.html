@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ACE in Action</title>
+<link rel="stylesheet" href="style.css">
+<style type="text/css" media="screen">
+    #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://use.edgefonts.net/abel:n4:all;prata:n4:all;source-code-pro:n9,n7,n2,n3,n4,n6,n5:all.js"></script></head>
+<body>
+
+<div id="editor">/* Variables */
+var bool_exemple = true;
+var table = 3;             // Unit of table
+var operator = 'addition'; // Type of calculation
+var i = 1;                 // Set counter to 1
+var msg = '';              // Message
+
+if (operator === 'addition') {
+  // Do addition
+  while (i < 11) {
+    msg += i + ' + ' + table + ' = ' + (i + table) + '\n';
+    i++;
+  }
+} else {
+  // Do multiplication
+  while (i < 11) {
+    msg += i + ' x ' + table + ' = ' + (i * table) + '\n';
+    i++;
+  }
+}
+
+// Variable scope is not ready yet
+for (var i = 1; i < 21; i++){
+    a_string = "i is equal to "+ i;
+}
+var string = "" + i;
+
+// And a null value to finish
+var el = null;</div>
+
+<div id="inspector_display"></div>
+    
+<script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var XXXXXXXXXX = {};
+    var execInProcess = false;
+    // Initialise the editor
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/solarized_light");
+    editor.getSession().setMode("ace/mode/javascript");
+    $(window).load(function(){
+        // Change the apparence of the gutter
+        // $(".ace_gutter-layer").attr('style', 'text-align:left;');
+        
+        // Create the status bar above it
+        $("#editor").attr("style", "top:30px");
+        $("#editor").before('<div id="statusBar"></div>');
+        $("#editor").before('<div id="notes" style="z-index:4;"><a href="notes.md" target="_blank">README</a></div>')
+
+        // Wrap
+        editor.session.setUseWrapMode(true);
+        editor.session.setWrapLimitRange(80,80);
+
+        style_ready();
+        triggerEvaluation();
+    });
+
+</script>
+<script src ="analysis.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

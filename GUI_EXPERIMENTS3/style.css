@@ -1,0 +1,101 @@
+#statusBar{
+    font-size: 16px;
+    margin: -8px;
+    padding-top: 4px;
+    padding-bottom: 6px;
+    padding-left: 65px;
+    font-family: prata, serif;
+}
+#statusBar.evaluating{
+    background-color: #dd2f0b;
+    color: aliceblue;
+}
+#statusBar.typing{
+    background-color: dodgerblue;
+    color: aliceblue;
+}
+#statusBar.ready{
+    background-color: darkgreen;
+    color: palegreen;
+}
+#statusBar.cleaning, #statusBar.error{
+    background-color: indianred;
+    color: white;
+}
+.inspector{
+    padding:10px;
+    background-color: #ddd4c1  !Important;
+    color:dimgray;
+    width:200px;
+    z-index: 4;
+}
+#inspector_display{
+    position:absolute;
+    height:calc(100% - 31px);
+    width:calc(100% - 629px);
+    left:629px;
+    top:30px;
+    background-color: #FDF6E3;
+    z-index: 3;
+}
+.var_name{
+    font-family: source-code-pro, sans-serif;
+    font-size: 13px;
+}
+.apo{
+    display: inline-block;
+    color: darkgray
+}
+.value{
+    font-family: abel;
+    border:1px solid darkgray;
+    display:inline-block;
+    padding: 7px;
+}
+.retu{
+    font-size: 10px;
+    opacity: 0.5;
+    margin-left: 5px;
+}
+.b_true{
+    color:darkgreen;
+}
+.b_false{
+    color:darkred;
+}
+.v_bool img{
+    height:16px;
+    margin-right: 5px;
+}
+.v_null{
+    color:dimgrey;
+}
+.v_null img{
+    height:16px;
+    margin-right: 5px;
+    position:relative;
+    top:2px;
+}
+.b_true, .b_false, .v_null, .v_numb, .apo{
+    font-size: 20px;
+}
+#notes{
+    border:1px solid rgba(256, 256, 256, 0.5);
+    position:relative;
+    bottom:19px;
+    right:5px;
+    display:inline-block;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+#notes a{
+    font-family: abel;
+    font-size: 13px;
+    color:white;
+    text-decoration: none;
+}
+.inspector_br, .inspector_lp{
+    font-family: abel;
+    font-size:13px;
+    opacity:0.5;
+}
