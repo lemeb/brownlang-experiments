@@ -234,7 +234,14 @@ function createNewCode(lines, varDict){
 		}
 		else {
 			if (varDict[i][0] == "var") code += addComputeVar(lines[i], varDict[i][1],i);
-			if (varDict[i][0] == "branch") code += addComputeBranch(lines[i], varDict[i][1], i);
+			if (varDict[i][0] == "branch") {
+				code = ('XXXXXXXXXX['+i+'] = '+
+						'["'+varDict[i][1]+'"'+
+						',"Branch not taken"'+
+						', "branch"];\n'+
+						code +
+						addComputeBranch(lines[i], varDict[i][1], i));
+			}
 			if (varDict[i][0] == "loop") code += addComputeLoop(lines[i], varDict[i][1], i);
 		}
 	};
@@ -242,15 +249,11 @@ function createNewCode(lines, varDict){
 }
 
 function addComputeBranch(line, varName, i){
-	return ('XXXXXXXXXX['+i+'] = '+
-			'["'+varName+'"'+
-			',"Branch not taken"'+
-			', "branch"]\n'+
-			line + "\n" +
+	return (line + "\n" +
 			'XXXXXXXXXX['+i+'] = '+
 			'["'+varName+'"'+
 			',"Branch taken"'+
-			', "branch"]\n');
+			', "branch"];\n');
 }
 
 function addComputeLoop(line, varName, i){
@@ -260,7 +263,7 @@ function addComputeLoop(line, varName, i){
 			'XXXXXXXXXX['+i+'] = '+
 			'["'+varName+'"'+
 			',(temp)'+
-			', "loop"]\n');
+			', "loop"];\n');
 }
 
 function addComputeVar(line, varName,i){
@@ -268,7 +271,7 @@ function addComputeVar(line, varName,i){
 			'XXXXXXXXXX['+i+'] = '+
 			'["'+varName+'"'+
 			',String('+varName+')'+
-			', typeof '+varName+']\n');
+			', typeof '+varName+'];\n');
 	/* code += 
 	'console.log("'+varName+': " 
 	+ toString('+varName+'))';
